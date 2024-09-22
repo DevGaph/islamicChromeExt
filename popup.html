@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Prayer Times</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 300px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .tab-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+        }
+        .tab {
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #555;
+        }
+        .tab.active {
+            background-color: #4CAF50;
+        }
+        .content {
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .segment {
+            display: none;
+        }
+        .segment.active {
+            display: block;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 16px;
+        }
+        #prayer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #prayer-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        #qibla-compass {
+            text-align: center;
+        }
+        #qibla-compass svg {
+            width: 100px;
+            height: 100px;
+        }
+        .settings-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab active" data-tab="next-prayer" data-i18n="nextPrayer">Next Prayer</div>
+        <div class="tab" data-tab="prayer-times" data-i18n="prayerTimes">Prayer Times</div>
+        <div class="tab" data-tab="qibla" data-i18n="qiblaDirection">Qibla</div>
+        <div class="tab" data-tab="islamic-date" data-i18n="islamicDate">Date</div>
+    </div>
+
+    <div class="content">
+        <div id="next-prayer" class="segment active">
+            <h2 data-i18n="nextPrayer">Next Prayer</h2>
+            <div id="next-prayer-name"></div>
+            <div id="next-prayer-time"></div>
+        </div>
+
+        <div id="prayer-times" class="segment">
+            <h2 data-i18n="prayerTimes">Prayer Times</h2>
+            <ul id="prayer-list"></ul>
+        </div>
+
+        <div id="qibla" class="segment">
+            <h2 data-i18n="qiblaDirection">Qibla Direction</h2>
+            <div id="qibla-compass"></div>
+        </div>
+
+        <div id="islamic-date" class="segment">
+            <h2 data-i18n="islamicDate">Islamic Date</h2>
+            <div id="hijri-date"></div>
+        </div>
+    </div>
+
+    <a href="#" class="settings-button" data-i18n="settings">Settings</a>
+
+    <script src="popup.js"></script>
+</body>
+</html>

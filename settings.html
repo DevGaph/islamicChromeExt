@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="settings">Islamic Prayer Times Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Scheherazade New', serif;
+            background-color: #f8f4e9;
+            margin: 0;
+            padding: 20px;
+            color: #3c3c3c;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+        h1 {
+            color: #1976d2;
+            margin-top: 0;
+            text-align: center;
+        }
+        .setting {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input[type="number"], input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto 0;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-i18n="settings">Prayer Times Settings</h1>
+        <div class="setting">
+            <label for="language" data-i18n="language">Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+        <div class="setting">
+            <label for="calculation-method" data-i18n="calculationMethod">Calculation Method:</label>
+            <select id="calculation-method">
+                <option value="2">Islamic Society of North America (ISNA)</option>
+                <option value="3">Muslim World League (MWL)</option>
+                <option value="4">Umm al-Qura, Makkah</option>
+                <option value="1">Egyptian General Authority of Survey</option>
+                <option value="5">University of Islamic Sciences, Karachi</option>
+            </select>
+        </div>
+        <div class="setting">
+            <label for="notification-time" data-i18n="notificationTime">Notification Time (minutes before prayer):</label>
+            <input type="number" id="notification-time" min="0" max="60" value="15">
+        </div>
+        <div class="setting">
+            <label for="adhan-volume" data-i18n="adhanVolume">Adhan Volume:</label>
+            <input type="range" id="adhan-volume" min="0" max="100" value="50">
+        </div>
+        <button id="save-settings" data-i18n="saveSettings">Save Settings</button>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>
